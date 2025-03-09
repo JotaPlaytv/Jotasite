@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <title>Área do Cliente - Jota Play</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
+  <style>
+    /* Estilos gerais */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #F0F0F0;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(to right, #000000, #5C0B0B);
+    }
+    .content {
+      background: linear-gradient(to top, #121212, #1212127A 65%, transparent);
+      border: 2px solid #FFFFFF;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 400px;
+    }
+    h1 {
+      font-size: 24px;
+      text-align: center;
+      color: #FFFFFF;
+    }
+    p {
+      text-align: center;
+      color: #FFFFFF;
+    }
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    button {
+      background: linear-gradient(to right, #D90000, #000000);
+      color: white;
+      padding: 12px;
+      font-size: 16px;
+      border: 2px solid white;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #0056B3;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+    }
+    /* Estilo do pop-up */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding-top: 60px;
+    }
+    .modal-content {
+      background: linear-gradient(to right, #651616, #000000);
+      margin: 5% auto;
+      padding: 20px;
+      border: 5px solid #FFFFFF;
+      width: 80%;
+      max-width: 400px;
+      color: #FFFFFF;
+      border-radius: 10px;
+    }
+    .close {
+      color: #FFFFFF;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .close:hover {
+      color: #0056B3;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <h1 id="mensagemBoasVindas">Seja bem-vindo!</h1>
+      <p>Como posso lhe ajudar?</p>
+      <div class="buttons">
+        <button onclick="window.location.href='mensalidade.html'">Pagar Mensalidade✅</button>
+        
+        <button onclick="window.location.href='alterarplano.html'">Alterar Plano📈</button>
+        <button id="indicarGanheBtn">Indique e Ganhe💲</button>
+        <button id="suporteBtn">Suporte Técnico👨🏻‍🔧</button>
+      </div>
+      <div class="footer">
+        <p><a href="login.html">Sair</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pop-up do "Indique e Ganhe" -->
+  <div id="indiqueGanheModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h1>💲Indique nossos serviços e ganhe!💲</h1>
+      <p>Indique amigos e ganhe um percentual de cada mensalidade paga por eles.    
+Por exemplo, se indicar 100 amigos e os 100 assinarem o plano de R$35,00 vc ganha R$500,00 (14,29%) todos os meses enquanto eles permanecerem como clientes ativos!     
+Aproveite, quanto mais amigos você indicar, mais você ganha!</p>
+      <a href="https://wa.me/5521996312820?text=Oi!%20Gostaria%20de%20*indicar*%20*e*%20*ganhar*%20com%20o%20Jota%20Play%20!%20" target="_blank">
+        <button>Indicar</button>
+      </a>
+    </div>
+  </div>
+
+  <!-- Pop-up do Suporte -->
+  <div id="suporteModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h1>📞 Suporte Técnico</h1>
+      <form id="suporteForm">
+        <p>Você está com acesso à internet?</p>
+        <label><input type="radio" name="*internet*" value="_Sim_"> Sim</label>
+        <label><input type="radio" name="*internet*" value="_Não_"> Não</label>
+
+        <p>Sua mensalidade está em dia?</p>
+        <label><input type="radio" name="*mensalidade*" value="_Sim_"> Sim</label>
+        <label><input type="radio" name="*mensalidade*" value="_Não_"> Não</label>
+
+        <p>Já tentou reiniciar seu dispositivo ?</p>
+        <label><input type="radio" name="*dispositivo*" value="_Sim_"> Sim</label>
+        <label><input type="radio" name="*dispositivo*" value="_Não_"> Não</label>
+
+        <br><br>
+        <button type="button" onclick="enviarSuporte()">Iniciar Suporte</button>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Pop-up para alterar plano -->
+<div id="alterarPlanoModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="fecharModal()">&times;</span>
+        <h1>📈 Alterar Plano</h1>
+
+        <!-- Carrossel de planos -->
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="plano" data-plano="Básico">
+                    <h2>Plano Básico</h2>
+                    <p>✅1 conexão<<br>
+✅Qualidade HD<br>
+✅Mais de 60.000 conteúdos<br>
+✅Qualidade SD/HD/FHD/4k<br>
+✅Guia de Programação [EPG]<br>
+✅Assista no Smartphone/Tablet<br>
+✅Assista no TV Box/Chromecast<br>
+✅Assista na Smart TV<br>
+✅Assista no Computador<br>
+✅Pacote Filmes e Série<br></p>
+                    <h1>R$ 20,00/mês💰</h1>
+                    <button onclick="selecionarPlano('Básico')">Selecionar este</button>
+                </div>
+
+                <div class="plano" data-plano="Premium">
+                    <h2>Plano Premium</h2>
+                    <p>✔ 150 Canais</p>
+                    <p>✔ Acesso em 2 dispositivos</p>
+                    <p>💰 R$ 35,00/mês</p>
+                    <button onclick="selecionarPlano('Premium')">Selecionar este</button>
+                </div>
+
+                <div class="plano" data-plano="Ultra">
+                    <h2>Plano Ultra</h2>
+                    <p>✔ 250 Canais</p>
+                    <p>✔ Acesso em 4 dispositivos</p>
+                    <p>💰 R$ 50,00/mês</p>
+                    <button onclick="selecionarPlano('Ultra')">Selecionar este</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  <script>
+    // Função para abrir modais
+    function abrirModal(id) {
+      document.getElementById(id).style.display = "block";
+    }
+
+    // Função para fechar modais
+    function fecharModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+
+    // Eventos para abrir e fechar os modais
+    document.getElementById("indicarGanheBtn").onclick = function() {
+      abrirModal("indiqueGanheModal");
+    };
+    
+    document.getElementById("suporteBtn").onclick = function() {
+      abrirModal("suporteModal");
+    };
+
+    // Fechar modais ao clicar no "X"
+    document.querySelectorAll(".close").forEach(function(element) {
+      element.onclick = function() {
+        fecharModal(element.parentElement.parentElement.id);
+      };
+    });
+
+    // Fechar modais ao clicar fora
+    window.onclick = function(event) {
+      if (event.target.classList.contains("modal")) {
+        fecharModal(event.target.id);
+      }
+    };
+
+    // Função para enviar suporte via WhatsApp
+    function enviarSuporte() {
+      let mensagem = "*Preciso de suporte!*\n";
+      document.querySelectorAll("#suporteForm input:checked").forEach(input => {
+        mensagem += `${input.name}: ${input.value}\n`;
+      });
+
+      let linkWhatsApp = "https://wa.me/5521996312820?text=" + encodeURIComponent(mensagem);
+      window.open(linkWhatsApp, "_blank");
+    }
+
+    // Verificar usuário logado
+    if (!localStorage.getItem("usuario")) {
+      window.location.href = "login.html";
+    } else {
+      const usuario = JSON.parse(localStorage.getItem("usuario"));
+      document.getElementById("mensagemBoasVindas").textContent = `Seja bem-vindo, ${usuario.nome}!`;
+    }
+  </script>
+</body>
+</html>

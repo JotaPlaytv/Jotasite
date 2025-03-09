@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <title>Login Jota Play</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="estilo-login.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <div class="bg-img"></div>
+    <div class="content">
+
+      <form id="loginForm">
+        <div>
+          <!-- Alterado de "email" para "text" para aceitar números -->
+          <input type="text" id="usuario" name="usuario" placeholder="Usuário" required />
+          <input type="password" id="password" name="password" placeholder="Senha" required />
+        </div>
+        <button type="submit">Entrar</button>
+      </form>
+
+      <p>Esqueceu a senha? <a href="#">Clique aqui!</a></p>
+      <p>Não é assinante? <a href="#">Assine já!</a></p>
+      <img src="logo.png" width="80" height="40" align="center" />
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelector(".container").classList.add("show");
+    });
+
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const usuario = document.getElementById("usuario").value;
+        const password = document.getElementById("password").value;
+
+        // Definindo os usuários cadastrados e suas senhas
+        const usuariosCadastrados = {
+    "12345": { nome: "Thayna", senha: "54321", plano: "Completo", valorPlano: 35 },
+    "67890": { nome: "Cliente 2", senha: "09876", plano: "Mensal", valorPlano: 45 },
+    "11223": { nome: "Cliente 3", senha: "33211", plano: "Plano 3", valorPlano: 55 }
+};
+
+        // Verificar se o usuário existe e a senha está correta
+        if (usuariosCadastrados[usuario] && usuariosCadastrados[usuario].senha === password) {
+            localStorage.setItem("usuario", JSON.stringify(usuariosCadastrados[usuario]));  // Salva os dados do usuário no localStorage
+            window.location.href = "cliente.html";  // Redireciona para a página do cliente
+        } else {
+            alert("Usuário ou senha incorretos!");
+        }
+    });
+  </script>
+</body>
+
+</html>

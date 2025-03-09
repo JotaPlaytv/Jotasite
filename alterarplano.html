@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alterar Plano</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #000000, #5C0B0B); /* Ajuste a cor de fundo para combinar com a página */
+      color: white; /* Ajusta a cor do texto para contraste com o fundo */
+      padding: 10px;
+      margin: 0;
+    }
+    h1 {
+      text-align: center;
+      color: #fff;
+    }
+    .carrossel-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 10px;
+      padding: 20px 0;
+    }
+    .plano {
+      min-width: 290px;
+      background: linear-gradient(to top, #121212, #1212127A 65%, transparent); /* Cor de fundo mais escura para os planos */
+      padding: 20px;
+      border: 3px solid white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      scroll-snap-align: start;
+      text-align: center;
+    }
+    .plano h3 {
+      color: #FFFFFF;
+    }
+    .plano p {
+      color: #ccc;
+      text-align: left; /* Alinha o texto à esquerda */
+      margin: 5px 0; /* Garante que as descrições fiquem com o mesmo espaçamento */
+    }
+    .botao-selecionar {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+    }
+    .botao-selecionar:hover {
+      background-color: #45a049;
+    }
+    .carrossel-container::-webkit-scrollbar {
+      height: 8px;
+    }
+    .carrossel-container::-webkit-scrollbar-thumb {
+      background-color: #888;
+      border-radius: 10px;
+    }
+    .carrossel-container::-webkit-scrollbar-thumb:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Escolha seu Novo Plano</h1>
+  <div class="carrossel-container">
+    <div class="plano">
+      <h2>Plano Celular</h2>
+      <p>✅1 conexão (celular)</p>
+      <p>✅Qualidade HD</p>
+      <p>✅Mais de 60.000 conteúdos</p>
+      <p>✅Qualidade SD/HD/FHD/4k</p>
+      <p>✅Guia de Programação [EPG]</p>
+      <p>✅Assista no Smartphone/Tablet</p>
+      <p>✅Assista no TV Box/Chromecast</p>
+      <p>✅Assista na Smart TV</p>
+      <p>✅Assista no Computador</p>
+      <p>✅Pacote Filmes e Série</p>
+      <h1>R$19,99</h1>
+      <a href="https://wa.me/5521996312820?text=Olá,%20gostaria%20de%20alterar%20para%20o%20Plano%20Celular." target="_blank">
+        <button class="botao-selecionar">Selecionar este</button>
+      </a>
+    </div>
+    <div class="plano">
+      <h2>Plano Mensal</h2>
+      <p>✅1 conexão</p>
+      <p>✅Qualidade HD</p>
+      <p>✅Mais de 60.000 conteúdos</p>
+      <p>✅Qualidade SD/HD/FHD/4k</p>
+      <p>✅Guia de Programação [EPG]</p>
+      <p>✅Assista no Smartphone/Tablet</p>
+      <p>✅Assista no TV Box/Chromecast</p>
+      <p>✅Assista na Smart TV</p>
+      <p>✅Assista no Computador</p>
+      <p>✅Pacote Filmes e Série</p>
+      <h1>R$34,99</h1>
+      <a href="https://wa.me/5521996312820?text=Olá,%20gostaria%20de%20alterar%20para%20o%20Plano%20Mensal." target="_blank">
+        <button class="botao-selecionar">Selecionar este</button>
+      </a>
+    </div>
+    <div class="plano">
+      <h2>Plano Adulto</h2>
+      <p>✅2 conexões (1 Tv e 1 celular)</p>
+      <p>✅Mais de 60.000 conteúdos</p>
+      <p>✅Qualidade SD/HD/FHD/4k</p>
+      <p>✅Guia de Programação [EPG]</p>
+      <p>✅Assista no Smartphone/Tablet</p>
+      <p>✅Assista no TV Box/Chromecast</p>
+      <p>✅Assista na Smart TV</p>
+      <p>✅Assista no Computador</p>
+      <p>✅Pacote Filmes e Série</p>
+      <p>✅Programação Adultos</p>
+      <h1>R$59,99</h1>
+      <a href="https://wa.me/5521996312820?text=Olá,%20gostaria%20de%20alterar%20para%20o%20Plano%20Adulto." target="_blank">
+        <button class="botao-selecionar">Selecionar este</button>
+      </a>
+    </div>
+    <div class="plano">
+      <h2>Plano Completo</h2> <!-- Novo plano adicionado -->
+      <p>✅ Até 2 TVs e 1 celular</p>
+                    <p>✅Mais de 60.000 conteúdos</p>
+                    <p>✅Qualidade SD/HD/FHD/4k</p>
+                    <p>✅Guia de Programação [EPG]</p>
+                    <p>✅Assista no Smartphone/Tablet</p>
+                    <p>✅Assista no TV Box/Chromecast</p>
+                    <p>✅Assista na Smart TV</p>
+                    <p>✅Assista no Computador</p>
+                    <p>✅Programação Adultos [Opcional]</p>
+                    <p>✅Pacote Filmes e Série</p>
+                    <h1>R$74,99</h1>
+      <a href="https://wa.me/5521996312820?text=Olá,%20gostaria%20de%20alterar%20para%20o%20Plano%20Completo." target="_blank">
+        <button class="botao-selecionar">Selecionar este</button>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    // Função para exibir o plano selecionado (opcional)
+    function selecionarPlano(plano) {
+      alert("Você selecionou o " + plano + "!");
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,687 @@
+  <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jota Play</title>
+    <style>
+        /* Reset de margens e estilos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Corpo da página */
+        body {
+            font-family: 'Arial', sans-serif; /* Fonte principal da página */
+            background: linear-gradient(to right, #000000, #5C0B0B); /* Fundo misto */
+            color: white; /* Texto em branco */
+            line-height: 1.2; /* Espaçamento entre linhas */
+        }
+
+        /* Cabeçalho */
+        header {
+            background: linear-gradient(to right, #000000, #5C0B0B); /* Fundo do cabeçalho */
+            padding: 20px; /* Espaçamento interno */
+            text-align: center; /* Centraliza o conteúdo */
+        }
+
+        /* Logo */
+        header img {
+            width: 300px; /* Tamanho da logo */
+        }
+
+        /* Imagem grande abaixo da logo */
+        header .imagem-grande {
+            width: 100%; /* A imagem vai ocupar toda a largura disponível */
+            max-width: 1200px; /* Ajuste o tamanho máximo da imagem */
+            height: auto; /* Ajusta a altura automaticamente */
+            margin-top: 5px 0 5 px; /* Espaço acima da imagem grande */
+        }
+
+        /* Primeira frase */
+        header h1 {
+            font-family: 'Verdana', sans-serif; /* Fonte do título principal */
+            font-size: 2.7em; /* Tamanho do título */
+            margin: 10px 20px 40px; /* Margem superior e inferior */
+            line-height: 1.5;
+        }
+
+        /* Segunda frase */
+        header .segunda-frase {
+            font-family: 'Tahoma', sans-serif; /* Fonte da segunda frase */
+            font-size: 1.8em; /* Tamanho do texto */
+            margin: 100px 0 10px; /* Distância entre as frases */
+            line-height: 1.5; /* Espaçamento entre linhas */
+        }
+
+        /* Terceira frase */
+        header .terceira-frase {
+            font-family: 'Tahoma', sans-serif; /* Fonte da terceira frase */
+            font-size: 1.em; /* Tamanho do texto */
+            margin: 80px -10; /* Distância entre as frases */
+            line-height: 1.5; /* Espaçamento entre linhas */
+        }
+
+        /* Botões no cabeçalho */
+        .btn {
+            display: flex; /*sei não mas ajudou a centralizar*/
+            justify-content: center; /*centraliza o botão*/
+            background: red; /* Fundo do botão */
+            color: ghostwhite; /* Cor do texto */
+            border: 1px solid white;
+            padding: 10px 20px; /* Espaçamento interno */
+            border-radius: 10px; /* Bordas arredondadas */
+            text-decoration: none; /* Remove sublinhado */
+            margin: 30px 0px 30px; /* Espaço entre botões */
+            font-family: 'Courier New', monospace; /* Fonte do texto do botão */
+            font-weight: bold; /* Texto em negrito */
+            transition: background 0.3s; /* Animação de hover */
+        }
+
+        .btn:hover {
+            background: #FF4500; /* Cor ao passar o mouse */
+        }
+
+        /* Seções */
+        section {
+            padding: 40px 20px; /* Espaçamento interno */
+            text-align: center; /* Alinha texto ao centro */
+
+        }
+
+        section h2 {
+            font-family: 'Georgia', serif; /* Fonte dos títulos das seções */
+            font-size: 2em; /* Tamanho do texto */
+            margin-bottom: 10px; /* Espaço abaixo do título */
+        }
+
+        /* Cards das vantagens */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap; /* Permite quebra de linha */
+            justify-content: center; /* Alinha os cards ao centro */
+            gap: 50px; /* Espaço entre os cards */
+        }
+
+        .card {
+            background-color: ;
+            opacity: 0.8;
+            border: 2px solid white; /* Fundo do card */
+            padding: 20px; /* Espaçamento interno */
+            border-radius: 10px; /* Bordas arredondadas */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+            width: 300px; /* Largura fixa */
+            text-align: left; /* Texto alinhado à esquerda */
+        }
+
+        .card h3 {
+            font-family: 'Times New Roman', serif; /* Fonte dos títulos dos cards */
+            font-size: 1.5em; /* Tamanho do título */
+            margin-bottom: 10px; /* Espaço abaixo do título */
+        }
+
+        .card h4 {
+            font-family: 'Georgia', serif; /* Fonte dos títulos dos cards */
+            color: white;
+            font-size: 3em; /* Tamanho do título */
+            margin-bottom: -10px ; /* Espaço abaixo do título */
+            margin-top: 35px;
+            text-align: center; /* Texto alinhado à esquerda */
+        }
+
+        .card h5 {
+            font-family: 'Georgia', serif; /* Fonte dos títulos dos cards */
+            color: white;
+            font-size: 3em; /* Tamanho do título */
+            margin-block: 30px;
+            margin-top: -10px;
+            margin-text: center;
+            text-align: center; /* Texto alinhado à esquerda */
+        }
+         .card h6 {
+            font-family: 'Georgia', serif; /* Fonte dos títulos dos cards */
+            color: white;
+            font-size: 1.8em; /* Tamanho do título */
+            margin-block: 10px;
+            margin-top: -10px;
+            margin-text: center;
+            text-align: center; /* Texto alinhado à esquerda */
+        }
+
+        .card p3 {
+            font-family: 'Arial', serif; /* Fonte dos títulos dos cards */
+            color: white;
+            font-size: 1em; /* Tamanho do título */
+            margin-block: 100px;
+            margin-top: -10px;
+            margin-text: center;
+            text-align: center; /* Texto alinhado à esquerda */
+        }
+        .card p {
+            font-family: 'Arial', sans-serif; /* Fonte do texto dos cards */
+            font-size: 1em; /* Tamanho do texto */
+        }
+
+        .card a {
+            font-family: 'Georgia', monospace; /* Fonte dos botões dentro dos cards */
+            font-size: 1em;
+            text-align: center;
+            white-space: nowrap;
+            width="50%";
+        }
+
+        /* Footer roda pé */
+        footer {
+            font-family: 'Verdana', sans-serif; /* Fonte do texto do rodapé */
+            background: transparent; /* Fundo do rodapé */
+            padding: 2px; /* Espaçamento interno */
+            text-align: center; /* Alinha texto ao centro */
+            font-size: 0.9em; /* Tamanho do texto */
+            margin-bottom: -60px;
+        }
+        .imagem-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.imagem-linha {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.imagem-linha img {
+    width: 100px; /* Ajuste o tamanho das imagens conforme necessário */
+    justify-content: 
+    height: auto;
+    border-radius: 8px;
+}
+.imagens-com-texto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px; /* Espaçamento entre os blocos */
+    margin-top: 20px; /* Distância do conteúdo anterior */
+}
+
+.imagem-texto img {
+    width: 300px; /* Tamanho das imagens */
+    height: auto;
+    border-radius: 8px; /* Bordas arredondadas, opcional */
+}
+
+.imagem-texto p {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 30px; /* Tamanho do texto */
+    color: ; /* Cor do texto */
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 300px; /* Ajuste conforme necessário */
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-container {
+    display: flex;
+    animation: slide 20s infinite;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-item img {
+    width: 60%; /* Ajuste as imagens para a largura do item */
+    height: auto;
+}
+
+/* Animação para o carrossel */
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    10% {
+        transform: translateX(-100%);
+    }
+    20% {
+        transform: translateX(-200%);
+    }
+    30% {
+        transform: translateX(-300%);
+    }
+    40% {
+        transform: translateX(-400%);
+    }
+    50% {
+        transform: translateX(-500%);
+    }
+    60% {
+        transform: translateX(-600%);
+    }
+    70% {
+        transform: translateX(-700%);
+    }
+    80% {
+        transform: translateX(-800%);
+    }
+    90% {
+        transform: translateX(-900%);
+    }
+    100% {
+        transform: translateX(-1000%);
+    }
+}
+
+
+.image-container img {
+  width: 100%;        /* Ajusta a largura da imagem para 100% do contêiner */
+  max-width: 300px;   /* Define o tamanho máximo */
+  height: auto;       /* Mantém a proporção original da imagem */
+  border-radius: 10px; /* Adiciona cantos arredondados */
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.0); /* Adiciona uma sombra */
+}
+
+.espaco {
+  margin-top: 50px; /* Espaço acima */
+  margin-bottom: 80px; /* Espaço abaixo */
+}
+a button {
+  padding: 10px 20px;              /* Espaço interno do botão */
+  background-color: #25D366;      /* Cor verde do WhatsApp */
+  color: white;                   /* Cor do texto */
+  font-size: 16px;                /* Tamanho do texto */
+  border: none;                   /* Remove a borda */
+  border-radius: 5px;             /* Cantos arredondados */
+  cursor: pointer;                /* Ícone de mão ao passar o mouse */
+  transition: background-color 0.3s ease; /* Animação ao passar o mouse */
+}
+
+a button:hover {
+  background-color: #128C7E;      /* Cor mais escura ao passar o mouse */
+}
+
+/* Estilos gerais da página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+/* Estilo do cabeçalho */
+header {
+    background-color: #333333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+}
+
+/* Estilos do botão de login */
+.login-btn {
+    float: right;
+    padding: 10px 20px; /* Tamanho do botão */
+    font-size: 16px; /* Tamanho da fonte */
+    background-color: #FE0909; /* Cor de fundo */
+    color: #FFFFFF; /* Cor do texto */
+    border: 2px solid #FFFFFF; /* Sem borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Mostra que é clicável */
+    transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+    display: inline-block; /* Fica na mesma linha do texto */
+    margin-top: 20px; /* Espaço superior */
+}
+
+/* Efeito quando o mouse passa sobre o botão */
+.login-btn:hover {
+    background-color: #00B311; /* Cor mais escura no hover */
+}
+
+    </style>
+</head>
+<body>
+  <!-- Botão de login -->
+        <a href="login.html">
+            <button class="login-btn">Login</button>
+        </a>
+    </main>
+    <!-- Cabeçalho -->
+    <header>
+        <!-- Logo -->
+        <img src="https://imgur.com/G9OdjSN.jpg" alt="Jota Play Logo"> <!-- Substitua por sua logo -->
+
+        <!-- Imagem grande abaixo da logo -->
+        <img class="imagem-grande" src="https://imgur.com/Cfssf35.jpg" alt="Imagem Grande"> <!-- Substitua com o link da imagem grande -->
+
+        <!-- Primeira frase -->
+        <h1>Chega de escolher entre qualidade e economia.</h1>
+
+         <div class="image-container">
+  <img src="https://imgur.com/KveGku5.jpg" alt="Descrição da imagem">
+</div> <h2>Aqui você tem os dois!</h2>
+
+        <!-- Segunda frase -->
+        <p class="segunda-frase">Tenha todos os seus streamings favoritos por um preço que cabe no bolso.</p>
+        <!-- Terceira frase -->
+        <p class="terceira-frase">Mais de 2 mil canais abertos e fechados, Netflix, Amazon Prime, Disney+, HBO Max, Globoplay e muito mais!! Direto da sua TV ou celular em um único sistema!</p>
+        <!-- Imagens pequenas -->
+<div class="imagem-container">
+    <div class="imagem-linha">
+        <img src="https://imgur.com/vDMfDcQ.jpg" alt="Imagem 1">
+        <img src="https://imgur.com/Wd6XA0x.jpg" alt="Imagem 2">
+        <img src="https://imgur.com/iekjK6i.jpg" alt="Imagem 3">
+         </div>
+    <div class="imagem-linha">
+        <img src="https://imgur.com/4bHbjyN.jpg" alt="Imagem 4">
+        <img src="https://imgur.com/P7dC4KZ.jpg" alt="Imagem 5">
+        <img src="https://imgur.com/FYezHYO.jpg" alt="Imagem 6">
+         </div>
+    <div class="imagem-linha">
+        <img src="https://imgur.com/YE1oCCy.jpg" alt="Imagem 7">
+        <img src="https://imgur.com/6mJ2WuH.jpg" alt="Imagem 8">
+        <img src="https://imgur.com/gvIielo.jpg" alt="Imagem 9">
+         </div>
+    <div class="imagem-linha">
+        <img src="https://imgur.com/LO0HJkh.jpg" alt="Imagem 10">
+        <img src="https://imgur.com/ETNQaW3.jpg" alt="Imagem 11">
+        <img src="https://imgur.com/xUcvoVN.jpg" alt="Imagem 12">
+    </div>
+</div>
+        <!-- Botões -->
+
+        <a href="#planos" class="btn">TESTE GRÁTIS</a>
+    </header>
+<div class="imagem-container">
+
+    <!-- AQUI COMEÇAM AS IMAGENS GRANDES -->
+    <div class="imagens-com-texto">
+    <!-- Primeira imagem com texto -->
+    <div class="imagem-texto">
+        <img src="https://imgur.com/EDackem.jpg" alt="Descrição da Imagem 1">
+        <p>Assista onde quiser</p>
+
+        Com aplicativos totalmente compatíveis com seu celular, televisor, aparelhos de TV Box, videogame e muito mais.Mais de 100.000 conteúdos em nosso aplicativo, você pode assistir todos os filmes, até mesmo os lançamentos que estão nos cinemas.</p>
+    </div>
+
+    <!-- Segunda imagem com texto -->
+    <div class="imagem-texto">
+        <img src="https://imgur.com/Iyy5jaE.jpg" alt="Descrição da Imagem 2">
+        <p>Assista online direto do seu computador ou celular.</p>
+        Além de aplicativo no celular e na sua televisão, o Jota Play tem mais a te oferecer! Temos uma parceria com uma plataforma web para assistir na tela do seu computador, basta entrar na sua conta e aproveitar onde quiser.
+    </div>
+    <section>
+        <h2> Filmes 🎞️</h2>
+        <div class="card-container">
+
+
+    <div class="carousel">
+    <div class="carousel-container">
+        <div class="carousel-item">
+            <img src="https://imgur.com/bX1qGt3.jpg" alt="Imagem 1"><p></p>
+        </div>
+        <div class="carousel-item">
+            <img src="https://imgur.com/hAzBSVK.jpg" alt="Imagem 2">
+        </div>
+        <div class="carousel-item">
+            <img src="https://imgur.com/gk5xq3W.jpg" alt="Imagem 3">
+        </div>
+        <div class="carousel-item">
+            <img src="https://imgur.com/kkni89q.jpg" alt="Imagem 4">
+        </div>
+        <div class="carousel-item">
+            <img src="https://imgur.com/NRXCA2m.jpg" alt="Imagem 5">
+        </div>
+        <div class="carousel-item">
+            <img src="https://imgur.com/0WPuccA.jpg" alt="Imagem 6">
+        </div>
+        <div class="carousel-item">
+            <img src="https://imgur.com/XlN9Kk7.jpg" alt="Imagem 7">
+        </div>
+        <div class="carousel-item">
+            <img src="https://imgur.com/fz6zpuE.jpg" alt="Imagem 8">
+        </div>
+        <div class="carousel-item">
+            <img src="https://imgur.com/2GsoSC6.jpg" alt="Imagem 9">
+        </div>
+        <div class="carousel-item">
+            <img src="https://imgur.com/D4s4bM0.jpg" alt="Imagem 10">
+        </div>
+        <!-- Adicione mais imagens conforme necessário -->
+    </div>
+      <section>
+        <h2> Séries 🎞️</h2>
+        <div class="card-container">
+
+
+    <div class="carousel">
+    <div class="carousel-container">
+        <div class="carousel-item">
+            <img src="https://imgur.com/tBpj190.jpg" alt="Imagem 1"><p></p>
+        </div>
+        <div class="carousel-item">
+            <img src="https://imgur.com/17NGI2C.jpg" alt="Imagem 2">
+        </div>
+        <div class="carousel-item">
+            <img src="https://imgur.com/ASUXfO4.jpg" alt="Imagem 3">
+        </div>
+        <div class="carousel-item">
+            <img src="https://imgur.com/vJuVXwV.jpg" alt="Imagem 4">
+        </div>
+        <div class="carousel-item">
+            <img src="https://imgur.com/dgR3b7c.jpg" alt="Imagem 5">
+        </div>
+        <div class="carousel-item">
+            <img src="https://imgur.com/GMROmIC.jpg" alt="Imagem 6">
+        </div>
+        <div class="carousel-item">
+            <img src="https://imgur.com/ZW7AJbr.jpg" alt="Imagem 7">
+        </div>
+        <div class="carousel-item">
+            <img src="https://imgur.com/wjnzhhW.jpg" alt="Imagem 8">
+        </div>
+        <div class="carousel-item">
+            <img src="https://imgur.com/Z3JLTeF.jpg" alt="Imagem 9">
+        </div>
+        <div class="carousel-item">
+            <img src="https://imgur.com/gB9KeAO.jpg" alt="Imagem 10">
+        </div>
+        <!-- Adicione mais imagens conforme necessário -->
+    </div>
+</div>
+</div>
+<div class="espaco">
+  </div>
+    <!-- Terceira imagem com texto -->
+    <div class="imagem-texto">
+      <p>Canais adultos 🔞</p>
+        Toda a lista de canais adultos protegido com senha para bloqueio e segurança das crianças.
+        <img src="https://imgur.com/LLqhUdw.jpg" alt="Descrição da Imagem 3">
+    </div>
+    <div class="espaco">
+  </div>
+         <!-- Quarta imagem com texto -->
+    <div class="imagem-texto">
+       <p>Esportes ⚽</p>
+        Prepare-se para ter literalmente todos os acessos dos canais de esporte, futebol, artes marciais e muito mais!
+        <img src="https://imgur.com/PlB3mn1.jpg" alt="Descrição da Imagem 4">
+           </div>
+    <div class="espaco">
+  </div>
+         <!-- Quinta imagem com texto -->
+    <div class="imagem-texto">
+      <p>Canais infantis 🎈</p>
+        Toda a lista para a criançada se divertir além de disney plus e muito mais!
+        <img src="https://imgur.com/6oPSgqN.jpg" alt="Descrição da Imagem 5">
+           </div>
+    <div class="espaco">
+  </div>
+         <!-- Sexta imagem com texto -->
+    <div class="imagem-texto">
+      <p>Animes CrunchyRoll 🎮</p>
+        Possuímos uma lista enorme com todos os animes do momento.
+        <img src="https://imgur.com/F9sPV3C.jpg" alt="Descrição da Imagem 6">
+
+    </div>
+</div>
+
+    <!-- Outras imagens -->
+</div>
+    <!-- Vantagens -->
+    <section>
+        <h2>Por que escolher Jota Play?</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>Qualidade Premium</h3>
+                <p>Assista em alta definição sem interrupções.</p>
+            </div>
+            <div class="card">
+                <h3>Suporte 24/7</h3>
+                <p>Estamos prontos para te ajudar sempre que precisar.</p>
+            </div>
+            <div class="card">
+                <h3>Conteúdo Exclusivo</h3>
+                <p>Filmes, séries, esportes e muito mais.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Planos -->
+    <section id="planos">
+        <h2>Nossos Planos</h2>
+         <div class="card-container">
+            <div class="card">
+
+                <h6>Plano</h6>
+                <h5>Celular</h5>
+                <p3></p3>
+
+                <ul>
+                    <p>✅1 conexão</p>
+                    <p>✅Qualidade HD</p>
+                    <p>✅Mais de 60.000 conteúdos</p>
+                    <p>✅Qualidade SD/HD/FHD/4k</p>
+                    <p>✅Guia de Programação [EPG]</p><p>✅Assista no Smartphone/Tablet</p><p>✅Assista no TV Box/Chromecast</p>
+                    <p>✅Assista na Smart TV</p>
+                    <p>✅Assista no Computador</p>
+                    <p>✅Pacote Filmes e Série</p>
+
+                    <h4>R$19,99</h4>
+                </ul>
+                <a href="#contato" class="btn">Assine Agora</a>
+            </div>
+
+        <div class="card-container">
+            <div class="card">
+
+                <h6>Plano</h6>
+                <h5>Mensal</h5>
+                <p3></p3>
+
+                <ul>
+                    <p>✅1 conexão</p>
+                    <p>✅Qualidade HD</p>
+                    <p>✅Mais de 60.000 conteúdos</p>
+                    <p>✅Qualidade SD/HD/FHD/4k</p>
+                    <p>✅Guia de Programação [EPG]</p><p>✅Assista no Smartphone/Tablet</p><p>✅Assista no TV Box/Chromecast</p>
+                    <p>✅Assista na Smart TV</p>
+                    <p>✅Assista no Computador</p>
+                    <p>✅Pacote Filmes e Série</p>
+
+                    <h4>R$34,99</h4>
+                </ul>
+                <a href="#contato" class="btn">Assine Agora</a>
+            </div>
+
+            <div class="card">
+                <h6>Plano</h6>
+                <h5>Adulto</h5>
+
+                <ul>
+                    <p>✅2 conexões (1 Tv e 1 celular)</p>
+                    <p>✅Mais de 60.000 conteúdos</p>
+                    <p>✅Qualidade SD/HD/FHD/4k</p>
+                    <p>✅Guia de Programação [EPG]</p>
+                                        <p>✅Assista no Smartphone/Tablet</p>
+                    <p>✅Assista no TV Box/Chromecast</p>
+                    <p>✅Assista na Smart TV</p>
+                    <p>✅Assista no Computador</p>
+                    <p>✅Pacote Filmes e Série</p>
+                    <p>✅Programação Adultos</p>
+                   <h4>R$49,99</h4>
+                </ul>
+                <a href="#contato" class="btn">Assine Agora</a>
+            </div>
+
+            <div class="card">
+                <h6>Plano</h6>
+                <h5>Completo</h5>
+
+                <ul>
+                    <p>✅ Até 2 TVs e 1 celular</p>
+                    <p>✅Mais de 60.000 conteúdos</p>
+                    <p>✅Qualidade SD/HD/FHD/4k</p>
+                    <p>✅Guia de Programação [EPG]</p>
+                    <p>✅Assista no Smartphone/Tablet</p>
+                    <p>✅Assista no TV Box/Chromecast</p>
+                    <p>✅Assista na Smart TV</p>
+                    <p>✅Assista no Computador</p>
+                    <p>✅Programação Adultos [Opcional]</p>
+                    <p>✅Pacote Filmes e Série</p>
+                    <h4>R$64,99</h4>
+                </ul>
+                      <a href="#contato" class="btn">Assine Agora</a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato">
+
+        <h2>Entre em Contato</h2>
+        <form>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+
+            <label for="email">Número:</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu whatsapp">
+              <div class="espaco">
+  </div>
+            <a href="https://bit.ly/3Oix19c" target="_blank">
+  <button type="button">Enviar pelo WhatsApp</button>
+</a>
+<div class="imagem-container">
+    <div class="imagem-linha">
+        <img src="https://imgur.com/G9OdjSN.jpg" alt="Imagem 1">
+    </div>
+    <a>O melhor do entretenimento digital é aqui Jota Play</a>
+
+        </form>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        &copy; 2017 Jota Play. Todos os direitos reservados.
+    </footer>
+
+</body>
+</html>

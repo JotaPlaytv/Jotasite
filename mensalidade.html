@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <title>Pagamento Mensalidade</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background:linear-gradient(to right, #000000, #5C0B0B);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 400px;
+      padding: 20px;
+      background: linear-gradient(to top, #121212, #121212A 65%, transparent);
+      border-radius: 10px;
+      border: 2px solid white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h2 {
+      color: #FFFFFF;
+    }
+
+    .cliente-info p {
+      font-size: 16px;
+      margin: 10px 0;
+      color: #C1C1C1;
+    }
+
+    .cliente-info span {
+      font-weight: bold;
+      color: #FFFFFF;
+    }
+
+    button {
+      background-color: #28A745;
+      color: white;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h2>Pagamento de Mensalidade</h2>
+
+    <div class="cliente-info">
+      <p><strong>Nome:</strong> <span id="nomeCliente"></span></p>
+      <p><strong>Plano:</strong> <span id="planoCliente"></span></p>
+      <p><strong>Valor:</strong> R$ <span id="valorPlano"></span></p>
+    </div>
+
+    <button id="gerarChave" onclick="gerarChave()">Solicitar Chave de Pagamento</button>
+  </div>
+
+  <script>
+    // Pegar as informações do usuário do localStorage
+    const usuario = JSON.parse(localStorage.getItem("usuario"));
+
+    // Exibir as informações na página
+    if (usuario) {
+      document.getElementById("nomeCliente").textContent = usuario.nome;
+      document.getElementById("planoCliente").textContent = "Plano " + usuario.plano;
+      document.getElementById("valorPlano").textContent = usuario.valorPlano;
+    }
+
+    // Função para gerar a chave de pagamento e redirecionar para o WhatsApp
+    function gerarChave() {
+      if (usuario) {
+        const chavePagamento = `*Chave de pagamento para mensalidade:*
+        
+*Cliente*: _${usuario.nome}_ 
+*Plano:* _${usuario.plano}_
+*Valor:* _R$ ${usuario.valorPlano}_`;
+        const urlWhatsApp = `https://wa.me/5521996312820?text=${encodeURIComponent(chavePagamento)}`;
+        window.open(urlWhatsApp, "_blank");
+      } else {
+        alert("Usuário não encontrado!");
+      }
+    }
+  </script>
+</body>
+
+</html>

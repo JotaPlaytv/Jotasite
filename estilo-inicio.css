@@ -1,0 +1,345 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Corpo da página */
+        body {
+            font-family: 'Arial', sans-serif; /* Fonte principal da página */
+            background: linear-gradient(to right, #000000, #5C0B0B); /* Fundo misto */
+            color: white; /* Texto em branco */
+            line-height: 1.2; /* Espaçamento entre linhas */
+        }
+
+        /* Cabeçalho */
+        header {
+            background: linear-gradient(to right, #000000, #FFFFFF); /* Fundo do cabeçalho */
+            padding: 20px; /* Espaçamento interno */
+            text-align: center; /* Centraliza o conteúdo */
+        }
+
+        /* Logo */
+        header img {
+            width: 300px; /* Tamanho da logo */
+        }
+
+        /* Imagem grande abaixo da logo */
+        header .imagem-grande {
+            width: 100%; /* A imagem vai ocupar toda a largura disponível */
+            max-width: 1200px; /* Ajuste o tamanho máximo da imagem */
+            height: auto; /* Ajusta a altura automaticamente */
+            margin-top: 5px 0 5 px; /* Espaço acima da imagem grande */
+        }
+
+        /* Primeira frase */
+        header h1 {
+            font-family: 'Verdana', sans-serif; /* Fonte do título principal */
+            font-size: 2.7em; /* Tamanho do título */
+            margin: 10px 20px 40px; /* Margem superior e inferior */
+            line-height: 1.5;
+        }
+
+        /* Segunda frase */
+        header .segunda-frase {
+            font-family: 'Tahoma', sans-serif; /* Fonte da segunda frase */
+            font-size: 1.8em; /* Tamanho do texto */
+            margin: 100px 0 10px; /* Distância entre as frases */
+            line-height: 1.5; /* Espaçamento entre linhas */
+        }
+
+        /* Terceira frase */
+        header .terceira-frase {
+            font-family: 'Tahoma', sans-serif; /* Fonte da terceira frase */
+            font-size: 1.em; /* Tamanho do texto */
+            margin: 80px -10; /* Distância entre as frases */
+            line-height: 1.5; /* Espaçamento entre linhas */
+        }
+
+        /* Botões no cabeçalho */
+        .btn {
+            display: flex; /*sei não mas ajudou a centralizar*/
+            justify-content: center; /*centraliza o botão*/
+            background: red; /* Fundo do botão */
+            color: ghostwhite; /* Cor do texto */
+            border: 1px solid white;
+            padding: 10px 20px; /* Espaçamento interno */
+            border-radius: 10px; /* Bordas arredondadas */
+            text-decoration: none; /* Remove sublinhado */
+            margin: 30px 0px 30px; /* Espaço entre botões */
+            font-family: 'Courier New', monospace; /* Fonte do texto do botão */
+            font-weight: bold; /* Texto em negrito */
+            transition: background 0.3s; /* Animação de hover */
+        }
+
+        .btn:hover {
+            background: #FF4500; /* Cor ao passar o mouse */
+        }
+
+        /* Seções */
+        section {
+            padding: 40px 20px; /* Espaçamento interno */
+            text-align: center; /* Alinha texto ao centro */
+
+        }
+
+        section h2 {
+            font-family: 'Georgia', serif; /* Fonte dos títulos das seções */
+            font-size: 2em; /* Tamanho do texto */
+            margin-bottom: 10px; /* Espaço abaixo do título */
+        }
+
+        /* Cards das vantagens */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap; /* Permite quebra de linha */
+            justify-content: center; /* Alinha os cards ao centro */
+            gap: 50px; /* Espaço entre os cards */
+        }
+
+        .card {
+            background-color: ;
+            opacity: 0.8;
+            border: 2px solid white; /* Fundo do card */
+            padding: 20px; /* Espaçamento interno */
+            border-radius: 10px; /* Bordas arredondadas */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+            width: 300px; /* Largura fixa */
+            text-align: left; /* Texto alinhado à esquerda */
+        }
+
+        .card h3 {
+            font-family: 'Times New Roman', serif; /* Fonte dos títulos dos cards */
+            font-size: 1.5em; /* Tamanho do título */
+            margin-bottom: 10px; /* Espaço abaixo do título */
+        }
+
+        .card h4 {
+            font-family: 'Georgia', serif; /* Fonte dos títulos dos cards */
+            color: white;
+            font-size: 3em; /* Tamanho do título */
+            margin-bottom: -10px ; /* Espaço abaixo do título */
+            margin-top: 35px;
+            text-align: center; /* Texto alinhado à esquerda */
+        }
+
+        .card h5 {
+            font-family: 'Georgia', serif; /* Fonte dos títulos dos cards */
+            color: white;
+            font-size: 3em; /* Tamanho do título */
+            margin-block: 30px;
+            margin-top: -10px;
+            margin-text: center;
+            text-align: center; /* Texto alinhado à esquerda */
+        }
+         .card h6 {
+            font-family: 'Georgia', serif; /* Fonte dos títulos dos cards */
+            color: white;
+            font-size: 1.8em; /* Tamanho do título */
+            margin-block: 10px;
+            margin-top: -10px;
+            margin-text: center;
+            text-align: center; /* Texto alinhado à esquerda */
+        }
+
+        .card p3 {
+            font-family: 'Arial', serif; /* Fonte dos títulos dos cards */
+            color: white;
+            font-size: 1em; /* Tamanho do título */
+            margin-block: 100px;
+            margin-top: -10px;
+            margin-text: center;
+            text-align: center; /* Texto alinhado à esquerda */
+        }
+        .card p {
+            font-family: 'Arial', sans-serif; /* Fonte do texto dos cards */
+            font-size: 1em; /* Tamanho do texto */
+        }
+
+        .card a {
+            font-family: 'Georgia', monospace; /* Fonte dos botões dentro dos cards */
+            font-size: 1em;
+            text-align: center;
+            white-space: nowrap;
+            width="50%";
+        }
+
+        /* Footer roda pé */
+        footer {
+            font-family: 'Verdana', sans-serif; /* Fonte do texto do rodapé */
+            background: transparent; /* Fundo do rodapé */
+            padding: 2px; /* Espaçamento interno */
+            text-align: center; /* Alinha texto ao centro */
+            font-size: 0.9em; /* Tamanho do texto */
+            margin-bottom: -60px;
+        }
+        .imagem-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.imagem-linha {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.imagem-linha img {
+    width: 100px; /* Ajuste o tamanho das imagens conforme necessário */
+    justify-content: 
+    height: auto;
+    border-radius: 8px;
+  
+}
+.imagens-com-texto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px; /* Espaçamento entre os blocos */
+    margin-top: 20px; /* Distância do conteúdo anterior */
+}
+
+.imagem-texto img {
+    width: 300px; /* Tamanho das imagens */
+    height: auto;
+    border-radius: 8px; /* Bordas arredondadas, opcional */
+}
+
+.imagem-texto p {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 30px; /* Tamanho do texto */
+    color: ; /* Cor do texto */
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 300px; /* Ajuste conforme necessário */
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-container {
+    display: flex;
+    animation: slide 20s infinite;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-item img {
+    width: 60%; /* Ajuste as imagens para a largura do item */
+    height: auto;
+}
+
+/* Animação para o carrossel */
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    10% {
+        transform: translateX(-100%);
+    }
+    20% {
+        transform: translateX(-200%);
+    }
+    30% {
+        transform: translateX(-300%);
+    }
+    40% {
+        transform: translateX(-400%);
+    }
+    50% {
+        transform: translateX(-500%);
+    }
+    60% {
+        transform: translateX(-600%);
+    }
+    70% {
+        transform: translateX(-700%);
+    }
+    80% {
+        transform: translateX(-800%);
+    }
+    90% {
+        transform: translateX(-900%);
+    }
+    100% {
+        transform: translateX(-1000%);
+    }
+}
+
+
+.image-container img {
+  width: 100%;        /* Ajusta a largura da imagem para 100% do contêiner */
+  max-width: 300px;   /* Define o tamanho máximo */
+  height: auto;       /* Mantém a proporção original da imagem */
+  border-radius: 10px; /* Adiciona cantos arredondados */
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.0); /* Adiciona uma sombra */
+}
+
+.espaco {
+  margin-top: 50px; /* Espaço acima */
+  margin-bottom: 80px; /* Espaço abaixo */
+}
+a button {
+  padding: 10px 20px;              /* Espaço interno do botão */
+  background-color: #25D366;      /* Cor verde do WhatsApp */
+  color: white;                   /* Cor do texto */
+  font-size: 16px;                /* Tamanho do texto */
+  border: none;                   /* Remove a borda */
+  border-radius: 5px;             /* Cantos arredondados */
+  cursor: pointer;                /* Ícone de mão ao passar o mouse */
+  transition: background-color 0.3s ease; /* Animação ao passar o mouse */
+}
+
+a button:hover {
+  background-color: #128C7E;      /* Cor mais escura ao passar o mouse */
+}
+
+/* Estilos gerais da página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+/* Estilo do cabeçalho */
+header {
+    background-color: #333333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+}
+
+/* Estilos do botão de login */
+.login-btn {
+    float: right;
+    padding: 10px 20px; /* Tamanho do botão */
+    font-size: 16px; /* Tamanho da fonte */
+    background-color: #FE0909; /* Cor de fundo */
+    color: #FFFFFF; /* Cor do texto */
+    border: 2px solid #FFFFFF; /* Sem borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Mostra que é clicável */
+    transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+    display: inline-block; /* Fica na mesma linha do texto */
+    margin-top: 20px; /* Espaço superior */
+}
+
+/* Efeito quando o mouse passa sobre o botão */
+.login-btn:hover {
+    background-color: #00B311; /* Cor mais escura no hover */
+}

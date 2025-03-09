@@ -1,0 +1,134 @@
+body {/*Este é o CSS do login*/
+    height: 100vh; /* Faz o corpo da página ocupar toda a altura da tela */
+    display: flex; /* Usa flexbox para alinhar os elementos */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    margin: 0; /* Remove margens padrão */
+    /* Fundo com um degradê preto/vermelho escuro */
+    background: black;
+    overflow: hidden; /* Impede que partes fora da tela apareçam */
+    position: relative; /* Necessário para o pseudo-elemento ::before funcionar corretamente */
+}
+
+body::before {
+    /* Pseudo-elemento para adicionar um efeito de fundo extra, mas ainda não foi configurado */
+}
+
+* {
+    margin: 0; /* Remove as margens padrão de todos os elementos */
+    padding: 0; /* Remove o preenchimento padrão de todos os elementos */
+    box-sizing: border-box; /* Garante que a largura e altura incluam as bordas e o preenchimento */
+}
+
+.container {
+    position: relative; /* Define a posição relativa para alinhar os elementos internos corretamente */
+    width: 295px; /* Define a largura da janelinha de login */
+    height: 500px; /* Define a altura da janelinha */
+    background: #1212126B; /* Fundo semitransparente escuro */
+    border-radius: 20px; /* Arredonda as bordas */
+    border: 2px solid #FFFFFF; /* Adiciona uma borda branca */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, .9); /* Adiciona um sombreamento */
+    overflow: hidden; /* Impede que elementos dentro ultrapassem as bordas */
+    
+    /* Configuração inicial da animação */
+    transform: scale(0); /* Começa invisível e pequeno */
+    opacity: 0; /* Deixa o elemento completamente transparente */
+    transition: transform 0.5s ease-in-out, opacity 0.5s; /* Transição suave */
+}
+
+.container.show {
+    transform: scale(1); /* Aumenta até o tamanho normal */
+    opacity: 1; /* Torna o elemento visível */
+}
+
+.bg-img {
+    position: absolute; /* Permite que a imagem fique fixa dentro do container */
+    top: 3px; /* Move a imagem um pouco para cima */
+    left: 50%; /* Move o início da imagem para o centro horizontal */
+    transform: translateX(-50%); /* Ajusta a posição para centralizar completamente */
+    width: 130%; /* Define a largura para 80% do container */
+    height: 185px; /* Define a altura da imagem */
+    background: url("fd.jpg") center / cover; /* Define a imagem de fundo e ajusta o tamanho */
+}
+
+.container::before {
+    content: ""; /* Necessário para que o pseudo-elemento apareça */
+    position: absolute; /* Faz o gradiente cobrir o fundo */
+    width: 100%; /* O pseudo-elemento cobre toda a largura do container */
+    height: 100%; /* O pseudo-elemento cobre toda a altura do container */
+    z-index: 1; /* Coloca esse efeito atrás do conteúdo */
+    background: linear-gradient(to top, #12121294 55%, transparent); /* Gradiente escuro na parte inferior */
+}
+
+.content {
+    position: absolute; /* Permite que os elementos internos fiquem bem alinhados */
+    bottom: 0; /* Faz o conteúdo ficar na parte inferior do container */
+    z-index: 2; /* Garante que o conteúdo fique acima do fundo */
+    width: 100%; /* Ocupa toda a largura disponível */
+    height: 330px; /* Define a altura do conteúdo */
+    display: flex; /* Usa flexbox para organizar os elementos */
+    flex-direction: column; /* Alinha os elementos verticalmente */
+    justify-content: space-evenly; /* Distribui os elementos de forma equilibrada */
+    align-items: center; /* Centraliza os itens no meio */
+    font-family: 'Poppins', sans-serif; /* Define a fonte */
+}
+
+form {
+    width: 260px; /* Define a largura do formulário */
+    height: 200px; /* Define a altura do formulário */
+    display: flex; /* Usa flexbox para organizar os elementos */
+    flex-direction: column; /* Coloca os elementos um abaixo do outro */
+    justify-content: space-evenly; /* Distribui os elementos dentro do formulário */
+}
+
+form input, button {
+    border: none; /* Remove a borda padrão */
+    height: 40px; /* Define a altura dos inputs e do botão */
+    outline: none; /* Remove o contorno padrão ao clicar */
+    border-radius: 2px; /* Bordas levemente arredondadas */
+}
+
+form input {
+    width: 260px; /* Define a largura dos inputs */
+    margin: 5px 0; /* Adiciona um pequeno espaçamento entre os inputs */
+    background: #333333; /* Define um fundo escuro para os campos */
+    padding: 0 10px; /* Adiciona um espaçamento interno */
+    color: white;
+    font-weight: bolder;
+    font-size: 15px;
+}
+
+form input::placeholder {
+    font-family: 'Poppins', sans-serif; /* Define a fonte do texto de placeholder */
+}
+
+form button {
+    background: #E50813; /* Define o fundo vermelho do botão */
+    color: #FFFFFF; /* Define a cor do texto como branco */
+    font-size: 16px; /* Define o tamanho do texto */
+    font-weight: bolder; /* Deixa o texto em negrito */
+    font-family: 'Poppins', sans-serif; /* Mantém a fonte usada no resto do site */
+}
+
+.content p {
+    width: 260px; /* Define a largura dos parágrafos */
+    color: #737373; /* Define a cor do texto */
+    font-size: 13px; /* Define o tamanho da fonte */
+}
+
+.content p a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: #FFFFFF; /* Define a cor dos links como branco */
+}
+
+/* Animação de Zoom */
+@keyframes aparecerZoom {
+    from {
+        transform: scale(0); /* Começa pequeno */
+        opacity: 0; /* Começa invisível */
+    }
+    to {
+        transform: scale(1); /* Cresce até o tamanho normal */
+        opacity: 1; /* Torna-se visível */
+    }
+}
