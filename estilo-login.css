@@ -48,7 +48,7 @@ body::before {
     transform: translateX(-50%); /* Ajusta a posição para centralizar completamente */
     width: 130%; /* Define a largura para 80% do container */
     height: 185px; /* Define a altura da imagem */
-    background: url("fd.jpg") center / cover; /* Define a imagem de fundo e ajusta o tamanho */
+    background: src("https://i.imgur.com/D87NouG.jpg") center / cover; /* Define a imagem de fundo e ajusta o tamanho */
 }
 
 .container::before {
