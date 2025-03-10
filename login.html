@@ -31,32 +31,41 @@
   </div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        document.querySelector(".container").classList.add("show");
-    });
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector(".container").classList.add("show");
+  });
 
-    document.getElementById("loginForm").addEventListener("submit", function(event) {
-        event.preventDefault();
+  document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault();
 
-        const usuario = document.getElementById("usuario").value;
-        const password = document.getElementById("password").value;
+    const usuario = document.getElementById("usuario").value;
+    const password = document.getElementById("password").value;
 
-        // Definindo os usuários cadastrados e suas senhas
-        const usuariosCadastrados = {
-    "72447": { nome: "Cátia", senha: "33867", plano: "Completo", valorPlano: 60 },
-    "95994": { nome: "Nathalya", senha: "57441", plano: "Completo", valorPlano: 70 },
-    "73506": { nome: "Helton", senha: "48507", plano: "Mensal", valorPlano: 35 }
-    "62949": { nome: "Jean", senha: "86025", plano: "Completo", valorPlano: 70 }
-};
+    // Definindo os usuários cadastrados e suas senhas
+    const usuariosCadastrados = {
+      "72447": { nome: "Cátia", senha: "33867", plano: "Completo", valorPlano: 60 },
+      "95994": { nome: "Nathalya", senha: "57441", plano: "Completo", valorPlano: 70 },
+      "73506": { nome: "Helton", senha: "48507", plano: "Mensal", valorPlano: 35 },
+      "10234": { nome: "Lucas", senha: "11223", plano: "Completo", valorPlano: 60 },
+      "21234": { nome: "Mariana", senha: "22334", plano: "Mensal", valorPlano: 35 },
+      "32345": { nome: "Carlos", senha: "33445", plano: "Completo", valorPlano: 60 },
+      "43456": { nome: "Joana", senha: "44556", plano: "Mensal", valorPlano: 35 },
+      "54567": { nome: "Gabriel", senha: "55667", plano: "Completo", valorPlano: 60 },
+      "65678": { nome: "Ana", senha: "66778", plano: "Mensal", valorPlano: 35 },
+      "76789": { nome: "Felipe", senha: "77889", plano: "Completo", valorPlano: 60 },
+      "87890": { nome: "Julia", senha: "88990", plano: "Mensal", valorPlano: 35 },
+      "98901": { nome: "Rafael", senha: "99001", plano: "Completo", valorPlano: 60 },
+      "10012": { nome: "Carla", senha: "10123", plano: "Mensal", valorPlano: 35 }
+    };
 
-        // Verificar se o usuário existe e a senha está correta
-        if (usuariosCadastrados[usuario] && usuariosCadastrados[usuario].senha === password) {
-            localStorage.setItem("usuario", JSON.stringify(usuariosCadastrados[usuario]));  // Salva os dados do usuário no localStorage
-            window.location.href = "cliente.html";  // Redireciona para a página do cliente
-        } else {
-            alert("Usuário ou senha incorretos!");
-        }
-    });
+    // Verificar se o usuário existe e a senha está correta
+    if (usuariosCadastrados[usuario] && usuariosCadastrados[usuario].senha === password) {
+      localStorage.setItem("usuario", JSON.stringify(usuariosCadastrados[usuario]));  // Salva os dados do usuário no localStorage
+      window.location.href = "cliente.html";  // Redireciona para a página do cliente
+    } else {
+      alert("Usuário ou senha incorretos!");
+    }
+  });
   </script>
 </body>
 
